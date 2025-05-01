@@ -20,6 +20,7 @@ struct ContentView: View {
 
     private func resetGame() {
         diceNumber = 0
+        rollscore = 0
         sum01 = 0
         sum02 = 0
         rollscore = 0
@@ -41,6 +42,17 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
+            if taketurn {
+                Rectangle()
+                    .frame(width: 180, height: 50)
+                    .foregroundStyle(.orange)
+                    .offset(x:-255, y:170)
+            }else{
+                Rectangle()
+                    .frame(width: 180, height: 50)
+                    .foregroundStyle(.orange)
+                    .offset(x:255, y:170)
+            }
             HStack {
                 VStack(spacing: 0) {
                     Text("PLAYER 1")
